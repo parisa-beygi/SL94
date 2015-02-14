@@ -1,9 +1,10 @@
-== سلام بچه ها
+== Sprint Logs
 
-ما الان خوشحالیم :)
-اسپرینت اول:
+First Sprint Tasks :
 
-* ساخت اکانت گیت هاب 
+* Create github account
 
-* ساخت فرم ثبت نام
+* Create sign-up form with confirmation mail
+
+* VPS
 
