@@ -1,18 +1,32 @@
-<h2>Sign up</h2>
+<h2 class="text-center registration_header"><%= t('common.sign_up') %></h2><hr><br />
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div class="registration_fields_containe">
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div class="registration_divs col-md-9">
+    <%= f.label :email , :class => 'pull-right col-md-2'%>
+    <%= f.email_field :email, :autofocus => true, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+  </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="registration_divs col-md-9">
+    <%= f.label :password, :class => 'pull-right col-md-2'%>
+    <%= f.password_field :password, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+  </div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div class="registration_divs col-md-9">
+    <%= f.label :password_confirmation, :class => 'pull-right col-md-2' %>
+    <%= f.password_field :password_confirmation, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+    <br><br><br>
+  </div>
+
+  <div class="col-md-6 col-sm-8 pull-right">
+    <%= f.submit t('common.sign_up'), :class => 'btn btn-success' %><br><br>
+    <%= link_to t('common.sign_in'), new_session_path(resource_name), :class => 'btn btn-info', :style => 'width: 10%;' %>
+  </div>
+</div>
+
 <% end %>
 
 <script>
@@ -27,7 +41,7 @@
 			event.preventDefault();
 		}
 	});
-</script
+</script>
 
 
-<%= render "devise/shared/links" %>
+

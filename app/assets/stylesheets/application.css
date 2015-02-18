@@ -11,3 +11,24 @@
  *= require_self
  *= require_tree .
  */
+
+/********* Layout ************/
+.main_body {
+    background-color: #9aabae;
+    font-family: serif;
+}
+
+
+/********* Registration Page ************/
+.registration_fields_container {
+    border: 2px solid #c1e2b3;
+}
+
+#registration_text_fields {
+    width: 20% !important;
+    margin-bottom: 10px
+}
+
+.registration_header {
+    color: #204d74;
+}
