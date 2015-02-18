@@ -2,9 +2,13 @@ fa:
   activerecord:
     attributes:
       user:
+        first_name: ":نام"
+        last_name: ":نام خانوادگی"
+        nickname: ":نام مستعار"
         email: ":پست الکترونیکی"
         password: ":رمز عبور"
         password_confirmation: ":تایید رمز عبور"
+        birth_date: ":تاریخ تولد"
   common:
     sign_up: "ثبت نام"
     sign_in: "ورود"

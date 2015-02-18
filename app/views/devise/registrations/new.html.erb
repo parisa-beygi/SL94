@@ -6,8 +6,30 @@
 <div class="registration_fields_containe">
 
   <div class="registration_divs col-md-9">
+    <%= f.label :first_name , :class => 'pull-right col-md-2'%>
+    <%= f.text_field :first_name, :autofocus => true, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+  </div>
+
+  <div class="registration_divs col-md-9">
+    <%= f.label :last_name , :class => 'pull-right col-md-2'%>
+    <%= f.text_field :last_name, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+  </div>
+
+  <div class="registration_divs col-md-9">
+    <%= f.label :nickname , :class => 'pull-right col-md-2'%>
+    <%= f.text_field :nickname, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+  </div>
+
+  <div class="registration_divs col-md-9">
+    <%= f.label :birth_date , :class => 'pull-right col-md-2'%>
+    <%= select_tag :birth_day, options_from_collection_for_select(@days, :last, :first) , :class => 'pull-right form-control' , :id => 'registration_text_fields' %>
+    <%= select_tag :birth_month, options_from_collection_for_select(@months,'first','last'), :class => 'pull-right form-control' , :id => 'registration_text_fields' %>
+    <%= select_tag :birth_year, options_from_collection_for_select(@years,'first','last'), :class => 'pull-right form-control' , :id => 'registration_text_fields' %>
+  </div>
+
+  <div class="registration_divs col-md-9">
     <%= f.label :email , :class => 'pull-right col-md-2'%>
-    <%= f.email_field :email, :autofocus => true, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+    <%= f.email_field :email, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
   </div>
 
   <div class="registration_divs col-md-9">
@@ -30,17 +52,17 @@
 <% end %>
 
 <script>
-	$( "form#new_user" ).submit(function( event ) {
-		var count = 0;
-		password = $('#user_password').val();
-		count += /[a-z]/.test(password) ? 1 : 0;
-		count += /[A-Z]/.test(password) ? 1 : 0;
-		count += /\d/.test(password) ? 1 : 0;
-
-		if(count < 3) {
-			event.preventDefault();
-		}
-	});
+//	$( "form#new_user" ).submit(function( event ) {
+//		var count = 0;
+//		password = $('#user_password').val();
+//		count += /[a-z]/.test(password) ? 1 : 0;
+//		count += /[A-Z]/.test(password) ? 1 : 0;
+//		count += /\d/.test(password) ? 1 : 0;
+//
+//		if(count < 3) {
+//			event.preventDefault();
+//		}
+//	});
 </script>
 
 
