@@ -45,6 +45,9 @@ SL94::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+
+  # SMTP settings for gmail
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

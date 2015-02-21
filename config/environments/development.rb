@@ -11,10 +11,31 @@ SL94::Application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
-
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.perform_deliveries = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :address  => "localhost",
+  :domain  => "esm-famil.com",
+  :port  => 25, 
+  :enable_starttls_auto => false 
+  }
+
+# later(didnet worked):
+# 
+
+
+# ActionMailer::Base.smtp_settings = {
+#   :address              => "smtp.gmail.com",
+#   :port                 => "587",
+#   :domain               => 'gmail.com',
+#   :user_name            => 'mahsa.abadian@gmail.com',
+#   :password             => '2351mM...',
+#   :authentication       => 'plain',
+#   :enable_starttls_auto => true,
+#   :ssl => true }
+
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -26,4 +47,5 @@ SL94::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
 end
