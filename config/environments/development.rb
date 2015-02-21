@@ -13,28 +13,30 @@ SL94::Application.configure do
   config.consider_all_requests_local       = true
   # Don't care if the mailer can't send.
 
-  config.action_mailer.perform_deliveries = false
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  :address  => "localhost",
-  :domain  => "esm-famil.com",
-  :port  => 25, 
-  :enable_starttls_auto => false 
-  }
+
+  # config.action_mailer.smtp_settings = {
+  # :address  => "localhost",
+  # :domain  => "esm-famil.com",
+  # :port  => 25, 
+  # :enable_starttls_auto => false 
+  # }
 
 # later(didnet worked):
 # 
+config.action_mailer.raise_delivery_errors = true
 
-
-# ActionMailer::Base.smtp_settings = {
-#   :address              => "smtp.gmail.com",
-#   :port                 => "587",
-#   :domain               => 'gmail.com',
-#   :user_name            => 'mahsa.abadian@gmail.com',
-#   :password             => '2351mM...',
-#   :authentication       => 'plain',
-#   :enable_starttls_auto => true,
-#   :ssl => true }
+ ActionMailer::Base.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => "587",
+  :domain               => 'gmail.com',
+  :user_name            => 'hmostafavi2011@gmail.com',
+  :password             => 'parsa8756',
+  :authentication       => 'plain',
+  :enable_starttls_auto => true,
+  :openssl_verify_mode  => 'none'
+ }
 
 
   # Print deprecation notices to the Rails logger.
