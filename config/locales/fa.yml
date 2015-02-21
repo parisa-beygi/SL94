@@ -9,6 +9,15 @@ fa:
         password: ":رمز عبور"
         password_confirmation: ":تایید رمز عبور"
         birth_date: ":تاریخ تولد"
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: " نوشته شده قبلا گرفته شده است"
+            nickname:
+              taken: " نوشته شده قبلا گرفته شده است"
   common:
     sign_up: "ثبت نام"
     sign_in: "ورود"
