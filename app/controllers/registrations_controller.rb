@@ -11,10 +11,10 @@ class RegistrationsController < Devise::RegistrationsController
                                   persian_to_english_num_string(params[:birth_day]).to_i)
     resource.birth_date = persian_date.to_g
 
-    if((Date.today.year * 12 + Date.today.month) - (persian_date.to_g.year * 12 + persian_date.to_g.month) < 12 * 8)
-      redirect_to :back , :alert => 'باید سن شما بیشتر از ۸ سال باشد'
+    #if((Date.today.year * 12 + Date.today.month) - (persian_date.to_g.year * 12 + persian_date.to_g.month) < 12 * 8)
+    #  redirect_to :back , :alert => 'باید سن شما بیشتر از ۸ سال باشد'
 
-    elsif resource.save
+    if resource.save
         # Tell the UserMailer to send a welcome email after save
         @user=resource
         UserMailer.welcome_email(@user).deliver
