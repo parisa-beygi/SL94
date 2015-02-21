@@ -22,9 +22,9 @@
 
   <div class="registration_divs col-md-9">
     <%= f.label :birth_date , :class => 'pull-right col-md-2'%>
-    <%= select_tag :birth_day, options_from_collection_for_select(@days, :last, :first) , :class => 'pull-right form-control' , :id => 'registration_text_fields' %>
-    <%= select_tag :birth_month, options_from_collection_for_select(@months,'first','last'), :class => 'pull-right form-control' , :id => 'registration_text_fields' %>
-    <%= select_tag :birth_year, options_from_collection_for_select(@years,'first','last'), :class => 'pull-right form-control' , :id => 'registration_text_fields' %>
+    <%= select_tag :birth_day, options_from_collection_for_select(@days, :last, :first) , :class => 'pull-right form-control' , :id => 'registration_day_select' %>
+    <%= select_tag :birth_month, options_from_collection_for_select(@months,'first','last'), :class => 'pull-right form-control' , :id => 'registration_month_select' %>
+    <%= select_tag :birth_year, options_from_collection_for_select(@years,'first','last'), :class => 'pull-right form-control' , :id => 'registration_year_select' %>
   </div>
 
   <div class="registration_divs col-md-9">
@@ -52,7 +52,9 @@
 <% end %>
 
 <script>
+
 //	$( "form#new_user" ).submit(function( event ) {
+//      var year = $('#registration_year_select').val();
 //		var count = 0;
 //		password = $('#user_password').val();
 //		count += /[a-z]/.test(password) ? 1 : 0;

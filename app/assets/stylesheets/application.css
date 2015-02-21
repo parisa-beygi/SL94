@@ -29,6 +29,21 @@
     margin-bottom: 10px
 }
 
+#registration_day_select {
+    width: 20% !important;
+    margin-bottom: 10px
+}
+
+#registration_month_select {
+    width: 20% !important;
+    margin-bottom: 10px
+}
+
+#registration_year_select {
+    width: 20% !important;
+    margin-bottom: 10px
+}
+
 .registration_header {
     color: #204d74;
 }
