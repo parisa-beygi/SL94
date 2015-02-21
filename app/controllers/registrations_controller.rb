@@ -16,8 +16,9 @@ class RegistrationsController < Devise::RegistrationsController
 
     if resource.save
         # Tell the UserMailer to send a welcome email after save
+       #
         @user=resource
-        UserMailer.welcome_email(@user).deliver
+       # UserMailer.welcome_email(@user).deliver
 
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?

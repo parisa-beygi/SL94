@@ -23,9 +23,23 @@ SL94::Application.configure do
   # :enable_starttls_auto => false 
   # }
 
-# later(didnet worked):
-# 
+ 
 config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+config.action_mailer.delivery_method = :smtp
+#config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
+
+# when publish
+
+# config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
+# config.action_mailer.delivery_method = :smtp
+# config.action_mailer.smtp_settings = {
+#   :address => "127.0.0.1",
+#   :port    => 25,
+#   :domain  => 'yourdomain.com'
+# }
+
+ 
 
  ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
@@ -34,7 +48,7 @@ config.action_mailer.raise_delivery_errors = true
   :user_name            => 'hmostafavi2011@gmail.com',
   :password             => 'parsa8756',
   :authentication       => 'plain',
-  :enable_starttls_auto => true,
+  :enable_starttls_auto =>  true,
   :openssl_verify_mode  => 'none'
  }
 
