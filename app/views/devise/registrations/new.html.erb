@@ -7,39 +7,39 @@
 
   <div class="registration_divs col-md-9">
     <%= f.label :first_name , :class => 'pull-right col-md-2'%>
-    <%= f.text_field :first_name, :autofocus => true, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+    <%= f.text_field :first_name, :autofocus => true, :class => 'form-control pull-right registration_text_fields' %>
   </div>
 
   <div class="registration_divs col-md-9">
     <%= f.label :last_name , :class => 'pull-right col-md-2'%>
-    <%= f.text_field :last_name, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+    <%= f.text_field :last_name, :class => 'form-control pull-right registration_text_fields' %>
   </div>
 
   <div class="registration_divs col-md-9">
     <%= f.label :nickname , :class => 'pull-right col-md-2'%>
-    <%= f.text_field :nickname, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+    <%= f.text_field :nickname, :class => 'form-control pull-right registration_text_fields' %>
   </div>
 
   <div class="registration_divs col-md-9">
     <%= f.label :birth_date , :class => 'pull-right col-md-2'%>
-    <%= select_tag :birth_day, options_from_collection_for_select(@days, :last, :first) , :class => 'pull-right form-control' , :id => 'registration_day_select' %>
-    <%= select_tag :birth_month, options_from_collection_for_select(@months,'first','last'), :class => 'pull-right form-control' , :id => 'registration_month_select' %>
-    <%= select_tag :birth_year, options_from_collection_for_select(@years,'first','last'), :class => 'pull-right form-control' , :id => 'registration_year_select' %>
+    <%= select_tag :birth_day, options_from_collection_for_select(@days, :last, :first) , :class => 'pull-right form-control registration_text_fields'  %>
+    <%= select_tag :birth_month, options_from_collection_for_select(@months,'first','last'), :class => 'pull-right form-control registration_text_fields' %>
+    <%= select_tag :birth_year, options_from_collection_for_select(@years,'first','last'), :class => 'pull-right form-control registration_text_fields' %>
   </div>
 
   <div class="registration_divs col-md-9">
     <%= f.label :email , :class => 'pull-right col-md-2'%>
-    <%= f.email_field :email, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+    <%= f.email_field :email, :class => 'form-control pull-right registration_text_fields' %>
   </div>
 
   <div class="registration_divs col-md-9">
     <%= f.label :password, :class => 'pull-right col-md-2'%>
-    <%= f.password_field :password, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+    <%= f.password_field :password, :class => 'form-control pull-right registration_text_fields' %>
   </div>
 
   <div class="registration_divs col-md-9">
     <%= f.label :password_confirmation, :class => 'pull-right col-md-2' %>
-    <%= f.password_field :password_confirmation, :class => 'form-control pull-right', :id => 'registration_text_fields' %>
+    <%= f.password_field :password_confirmation, :class => 'form-control pull-right registration_text_fields' %>
     <br><br><br>
   </div>
 
@@ -52,19 +52,36 @@
 <% end %>
 
 <script>
+persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
+function traverse(el){
+    if(el.nodeType==3){
+        var list=el.data.match(/[0-9]/g);
+        if(list!=null && list.length!=0){
+            for(var i=0;i<list.length;i++)
+                el.data=el.data.replace(list[i],persian[list[i]]);
+        }
+    }
+    for(var i=0;i<el.childNodes.length;i++){
+        traverse(el.childNodes[i]);
+    }
+};
 
-//	$( "form#new_user" ).submit(function( event ) {
-//      var year = $('#registration_year_select').val();
-//		var count = 0;
-//		password = $('#user_password').val();
-//		count += /[a-z]/.test(password) ? 1 : 0;
-//		count += /[A-Z]/.test(password) ? 1 : 0;
-//		count += /\d/.test(password) ? 1 : 0;
-//
-//		if(count < 3) {
-//			event.preventDefault();
-//		}
-//	});
+$( "form#new_user" ).submit(function( event ) {
+    var year = $('#registration_year_select').val();
+	var count = 0;
+	password = $('#user_password').val();
+	birth_year = $('#birth_year').val();
+	count += /[a-z]/.test(password) ? 1 : 0;
+	count += /[A-Z]/.test(password) ? 1 : 0;
+	count += /\d/.test(password) ? 1 : 0;
+
+
+	alert(password);
+	if(count < 3) {
+		alert('na na na');
+		event.preventDefault();
+	}
+});
 </script>
 
 

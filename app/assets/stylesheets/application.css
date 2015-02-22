@@ -24,7 +24,7 @@
     border: 2px solid #c1e2b3;
 }
 
-#registration_text_fields {
+.registration_text_fields {
     width: 20% !important;
     margin-bottom: 10px
 }
